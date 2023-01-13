@@ -1,7 +1,5 @@
-*{
-    background-color: rgba(61, 8, 253, 0.616);
-}
-.heading{
-    color:red;
-    margin: 10px;
-}
+@import './base/reset';
+@import "./abstract/global";
+
+@import "./components/button";
+@import "./components/header";

@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 20rem;
+}
+.header--meu {
+  display: flex;
+}
+
+/*# sourceMappingURL=main.css.map */

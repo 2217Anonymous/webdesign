@@ -1,6 +1,94 @@
-.heading {
-  color: red;
-  margin: 10px;
+@import url("https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.font-ta {
+  font-family: "Mukta Malar", sans-serif;
+}
+
+.color-animation {
+  transition: 500ms;
+  animation: color-change 3s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: red;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: rgb(250, 117, 9);
+  }
+}
+.btn-animation {
+  animation: btn-bg-animation 5s infinite;
+  transition: 500ms;
+}
+
+@keyframes btn-bg-animation {
+  0% {
+    background-color: rgba(247, 23, 23, 0.603);
+  }
+  50% {
+    background-color: rgba(243, 94, 8, 0.61);
+  }
+  100% {
+    background-color: rgba(250, 9, 121, 0.623);
+  }
+}
+.btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  line-height: 1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: aliceblue;
+  text-transform: uppercase;
+}
+.btn-primary {
+  background-color: #3f43fd;
+}
+.btn:hover {
+  background-color: #3135e8;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10rem;
+  font-weight: 600;
+  border: 1px solid rgb(184, 181, 181);
+}
+.header span {
+  color: rgb(212, 67, 67);
+}
+.header--menu {
+  display: flex;
+  list-style: none;
+}
+.header--menu__item > a {
+  margin-right: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+}
+.header--menu__item > a:hover {
+  color: #3f43fd;
+}
+.header--menu__item > a.active {
+  color: rgb(212, 67, 67);
 }
 
 /*# sourceMappingURL=main.css.map */

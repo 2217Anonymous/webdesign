@@ -1,0 +1,38 @@
+@use "./variables" as var;
+.font-ta {
+   font-family:var.$font-tamil;    
+}  
+
+.color-animation{
+   transition: 500ms;
+   animation: color-change 3s infinite;
+}
+
+@keyframes color-change {
+   0% {
+      color : red;
+   }
+   50%{
+      color:blue;
+   }
+   100%{
+      color:rgb(250, 117, 9);
+   }
+}
+
+.btn-animation{
+   animation: btn-bg-animation 5s infinite;
+   transition: 500ms;
+}
+
+@keyframes btn-bg-animation {
+   0% {
+      background-color : rgba(247, 23, 23, 0.603);
+   }
+   50%{
+      background-color:rgba(243, 94, 8, 0.61);
+   }
+   100%{
+      background-color:rgba(250, 9, 121, 0.623);
+   }
+}
