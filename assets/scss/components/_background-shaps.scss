@@ -1,0 +1,110 @@
+.background-shaps{
+    .box{
+        position: absolute;
+        background-color: transparent;
+        height:13px;
+        width:13px;
+        border-radius: 5px;
+        z-index:-1;
+        transform: rotate(360deg);
+        animation:box-rotate linear 5s infinite;
+        &1{
+            @extend .box;
+            top:20%;
+            border:3px solid blue;
+        }
+        
+        &3{
+            @extend .box;
+            top:90%;
+            left:50%;
+            border:3px solid rgb(255, 0, 0);
+        }
+        
+        &2{
+            @extend .box;
+            top:50%;
+            left:90%;
+            border:3px solid rgb(247, 61, 14);
+        }
+    }
+    .dot{
+        position: absolute;
+        height:8px;
+        width:8px;
+        border:50%;
+        border-radius: 5px;
+        z-index:-1;
+        transform: rotate(360deg);
+        animation:box-rotate linear 5s infinite;
+        &1{
+            @extend .dot;
+            background-color: rgb(247, 61, 14);
+            top:70%;
+            left:6%;
+        }
+        &2{
+            @extend .dot;
+            background-color: rgb(97, 6, 243);
+            top:90%;
+            left:80%;
+        }
+        &3{
+            @extend .dot;
+            background-color: rgb(78, 7, 243);
+            top:30%;
+            left:90%;
+        }
+        &4{
+            @extend .dot;
+            background-color: rgb(243, 7, 144);
+            top:30%;
+            left:50%;
+        }
+    }
+    .heart{
+        position: absolute;
+        background-color: transparent;
+        height:13px;
+        width:13px;
+        border-radius: 5px;
+        z-index:-1;
+        transform: rotate(360deg);
+        animation:box-rotate linear 10s infinite;
+        &1{
+            @extend .heart;
+            top:80%;
+            left:20%;
+        }
+        &2{
+            @extend .heart;
+            top:90%;
+            left:70%;
+        }
+        &3{
+            @extend .heart;
+            top:16%;
+            left:50%;
+        }
+        &4{
+            @extend .heart;
+            top:50%;
+            left:10%;
+        }
+        &5{
+            @extend .heart;
+            font-size: 1.5rem;
+            top:42%;
+            left:35%;
+        }
+    }
+}
+
+@keyframes box-rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

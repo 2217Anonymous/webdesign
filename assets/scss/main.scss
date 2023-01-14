@@ -1,5 +1,22 @@
+//CSS RESET
 @import './base/reset';
+//CSS GLOPAL
 @import "./abstract/global";
 
+
+//CSS COMPONENTS
+//CSS BUTTON
 @import "./components/button";
-@import "./components/header";
+//CSS HEADER
+@import "./components/header"; 
+@import "./components/background-shaps";
+
+//CSS UTILITIES
+//CSS BADGE
+@import "./utilities/badge.scss";
+//CSS SPACING
+@import "./utilities/spacing";
+
+//CSS PAGES
+//CSS HOME
+@import "./pages/home";

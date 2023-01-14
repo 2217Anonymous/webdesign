@@ -3,6 +3,10 @@
    font-family:var.$font-tamil;    
 }  
 
+.text-uppercase{
+   text-transform: uppercase;
+} 
+
 .color-animation{
    transition: 500ms;
    animation: color-change 3s infinite;
