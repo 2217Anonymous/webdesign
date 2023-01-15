@@ -1,0 +1,105 @@
+@use '../abstract/variables' as var;
+@use '../abstract/function' as func;
+.roadmap{
+    padding:4rem 10rem;
+
+    &--heading{
+        text-align: center;
+    }
+
+    &--items{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top:2rem;
+    }
+
+    &--item{
+        position: relative;
+        text-align: center;
+        max-width: 280px;
+        margin-top: 30px;
+        cursor: pointer;
+        filter: grayscale(100%);
+        &:hover &__img::after{
+            animation : rotate-infinite 4000ms linear infinite;
+        }
+        @keyframes rotate-infinite {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        &__img{
+            position: relative;
+            width:100px;
+            height:100px;
+            margin:auto;
+           img{
+            width:3rem;
+            margin-top: 10px;
+           }
+
+           &::after{
+            position: absolute;
+            content: "";
+            top:-22px;
+            left:-5px;
+            border:5px dotted func.theme-color();
+            width:100%;
+            height:100%;
+            border-radius: 50%;
+           }
+        }
+
+        &__content{
+
+            h5{
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+            p{
+                line-height:1;
+                color:gray;
+            }
+        }
+
+        &:not(:last-child)::before{
+            transition: 500ms;
+            position: absolute;
+            content:"\f0a4";
+            font-weight: bolder;
+            font-family: "Font Awesome 5 Free";
+            font-size: 1.5rem;
+            color:#111;
+            right:-15%;
+            top:20%;
+        }
+        &:hover:not(:last-child)::before{
+            content:"\f164";
+            right: -17%;
+            color:func.theme-color("primary")
+        }
+        &:last-child::before{
+            position: absolute;
+            font-family: "Font Awesome 5 Free";
+            font-size: 2rem;
+            color:#111;
+            right:-5%;
+            top:20%;
+            margin-right:-20px;
+        }
+        &:hover:last-child::before{
+            content:"😍 👍";
+            color:func.theme-color("primary")
+        }
+
+        &:hover{
+            filter: grayscale(0);
+           }
+    }
+
+    
+}

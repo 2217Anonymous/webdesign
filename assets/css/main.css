@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap");
 * {
   margin: 0;
@@ -40,6 +41,22 @@ a {
   transition: 500ms;
 }
 
+.img-animation {
+  position: relative;
+  animation: img-slider;
+  animation-duration: 4s;
+}
+
+@keyframes img-slider {
+  1% {
+    left: 0px;
+    top: 0px;
+  }
+  10% {
+    left: 200px;
+    top: 0px;
+  }
+}
 @keyframes btn-bg-animation {
   0% {
     background-color: rgba(247, 23, 23, 0.603);
@@ -51,6 +68,13 @@ a {
     background-color: rgba(250, 9, 121, 0.623);
   }
 }
+.line {
+  height: 5px;
+  width: 80px;
+  margin: 20px auto;
+  background: linear-gradient(to right, #e24997, #2d2ed2);
+}
+
 .btn, .btn-primary-outline, .btn-primary {
   padding: 0.8rem 1.6rem;
   border-radius: 6px;
@@ -866,6 +890,121 @@ a {
   color: gray;
   text-align: justify;
   line-height: 1.8;
+}
+
+.about-area {
+  padding: 4rem 8rem;
+  background-color: #3f43fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-area--img {
+  width: 25rem;
+}
+.about-area--content h2 {
+  font-size: 3rem;
+  color: #fff;
+}
+.about-area--content p {
+  color: #cfcfcf;
+  line-height: 2;
+}
+.about-area--content p a {
+  color: #fff;
+  text-shadow: 10px 20px 30px #111;
+}
+
+.roadmap {
+  padding: 4rem 10rem;
+}
+.roadmap--heading {
+  text-align: center;
+}
+.roadmap--items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+.roadmap--item {
+  position: relative;
+  text-align: center;
+  max-width: 280px;
+  margin-top: 30px;
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+.roadmap--item:hover .roadmap--item__img::after {
+  animation: rotate-infinite 4000ms linear infinite;
+}
+@keyframes rotate-infinite {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.roadmap--item__img {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+.roadmap--item__img img {
+  width: 3rem;
+  margin-top: 10px;
+}
+.roadmap--item__img::after {
+  position: absolute;
+  content: "";
+  top: -22px;
+  left: -5px;
+  border: 5px dotted #3f43fd;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.roadmap--item__content h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.roadmap--item__content p {
+  line-height: 1;
+  color: gray;
+}
+.roadmap--item:not(:last-child)::before {
+  transition: 500ms;
+  position: absolute;
+  content: "\f0a4";
+  font-weight: bolder;
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.5rem;
+  color: #111;
+  right: -15%;
+  top: 20%;
+}
+.roadmap--item:hover:not(:last-child)::before {
+  content: "\f164";
+  right: -17%;
+  color: #3f43fd;
+}
+.roadmap--item:last-child::before {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-size: 2rem;
+  color: #111;
+  right: -5%;
+  top: 20%;
+  margin-right: -20px;
+}
+.roadmap--item:hover:last-child::before {
+  content: "😍 👍";
+  color: #3f43fd;
+}
+.roadmap--item:hover {
+  filter: grayscale(0);
 }
 
 /*# sourceMappingURL=main.css.map */

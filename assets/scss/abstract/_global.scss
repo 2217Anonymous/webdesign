@@ -29,6 +29,17 @@
    transition: 500ms;
 }
 
+.img-animation{
+   position: relative;
+   animation:img-slider;
+   animation-duration:4s;
+}
+
+@keyframes img-slider {
+   1%   {left:0px; top:0px;}
+   10%  {left:200px; top:0px;}
+}
+
 @keyframes btn-bg-animation {
    0% {
       background-color : rgba(247, 23, 23, 0.603);
@@ -39,4 +50,11 @@
    100%{
       background-color:rgba(250, 9, 121, 0.623);
    }
+}
+
+.line{
+   height:5px;
+   width:80px;
+   margin:20px auto;
+   background: linear-gradient(to right,#e24997,#2d2ed2);
 }
