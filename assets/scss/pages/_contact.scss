@@ -1,0 +1,22 @@
+@use '../abstract/function' as func;
+@import "../components/forms";
+.contact{
+    padding:4rem 6rem;
+    background-color: rgba(185, 183, 183, 0.829);
+    &--card{
+        p{
+            font-size: small;
+        }
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        padding: 1rem 2rem;
+
+        &__form{
+            flex-grow: 1;
+        }
+    }
+
+}
