@@ -1,0 +1,26 @@
+@use '../abstract/function' as func;
+footer{
+    padding: 1rem;
+    text-align: center;
+    background-color:func.theme-color("primary") ;
+    color:white;
+    line-height: 1.8;
+}
+
+a{
+    color:aliceblue;
+    &:hover{
+        color:black;
+        text-shadow: 5px 5px 5px 5px #111;
+    }
+}
+
+.social-icons > a > i{
+    padding: 0.10px;
+    transition: 500ms;
+    color:blue;
+    &:hover{
+        color:rgb(224,224,224)
+    }
+}
+

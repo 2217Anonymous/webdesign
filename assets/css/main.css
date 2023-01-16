@@ -223,6 +223,31 @@ a {
     transform: rotate(360deg);
   }
 }
+footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: #3f43fd;
+  color: white;
+  line-height: 1.8;
+}
+
+a {
+  color: aliceblue;
+}
+a:hover {
+  color: black;
+  text-shadow: 5px 5px 5px 5px #111;
+}
+
+.social-icons > a > i {
+  padding: 0.1px;
+  transition: 500ms;
+  color: blue;
+}
+.social-icons > a > i:hover {
+  color: rgb(224, 224, 224);
+}
+
 .badge, .badge-primary {
   border-radius: 6px;
   font-weight: 600;
