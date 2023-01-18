@@ -9,3 +9,20 @@ stick_menu.addEventListener("click",()=>{
         icon.classList.toggle("hidden")
     })
 })
+
+function navbarFixed(){
+    const headerDom = document.querySelector(".header")
+    const navOfSetTop = headerDom.clientHeight + 50;
+
+    window.addEventListener("scroll",()=>{
+        let scroll = window.pageYOffset || document.documentElement.scrollTop;
+        if(scroll > navOfSetTop){
+            headerDom.classList.add("navbar-fixed")
+        }
+        else{
+            headerDom.classList.remove("navbar-fixed")
+        }
+    })
+}
+
+navbarFixed()

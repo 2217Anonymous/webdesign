@@ -6,6 +6,7 @@
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  scroll-margin-top: 50px;
 }
 
 @media only screen and (max-width: 576px) {
@@ -121,14 +122,11 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
   padding: 1rem 10rem;
   font-weight: 600;
   background-color: aliceblue;
   width: 100%;
   top: 0;
-  box-shadow: 5px 5px 5px 0px rgba(102, 100, 100, 0.75);
-  z-index: 1;
 }
 @media only screen and (max-width: 576px) {
   .header {
@@ -194,6 +192,11 @@ a {
   .header--menu__item > a {
     color: #fff;
   }
+}
+.header.navbar-fixed {
+  position: fixed;
+  box-shadow: 5px 5px 5px 0px rgba(102, 100, 100, 0.75);
+  z-index: 1;
 }
 
 .background-shaps .box, .background-shaps .box2, .background-shaps .box3, .background-shaps .box1 {

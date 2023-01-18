@@ -6,14 +6,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     padding: 1rem 10rem;
     font-weight: 600;
     background-color: aliceblue;
     width: 100%;
     top:0 ;
-    box-shadow: 5px 5px 5px 0px rgba(102, 100, 100, 0.75);
-    z-index: 1;
 
     @include mixins.responsive(xs){
       padding: 1rem 1rem;
@@ -85,4 +82,9 @@
       }
     }
 
+    &.navbar-fixed{
+      position: fixed;
+      box-shadow: 5px 5px 5px 0px rgba(102, 100, 100, 0.75);
+      z-index: 1;
+    }
   }
