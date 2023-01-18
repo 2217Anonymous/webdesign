@@ -4,12 +4,12 @@
     justify-content: space-around;
     padding: 5rem 15rem;
     align-items: center;
-    margin-top: 120px;
+    margin-top: 10px;
 
     @include mixins.responsive(xs){
         flex-direction: column;
         padding: 1rem 2rem;
-        margin-top: 70px;
+        margin-top: 10px;
     }
     &--contant{
         max-width: 34rem;
