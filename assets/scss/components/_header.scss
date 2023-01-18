@@ -1,21 +1,70 @@
 @use "../abstract/variables" as var;
 @use "../abstract/function" as func;
+@use "../abstract/mixins" as mixins;
 
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
     padding: 1rem 10rem;
     font-weight: 600;
-    border: 1px solid rgb(184, 181, 181);
+    background-color: aliceblue;
+    width: 100%;
+    top:0 ;
+    box-shadow: 5px 5px 5px 0px rgba(102, 100, 100, 0.75);
+    z-index: 1;
+
+    @include mixins.responsive(xs){
+      padding: 1rem 1rem;
+      box-shadow: 2px #111;
+      font-size: 12px;
+    }
 
     span{
-        color:func.theme-color("danger")
+        color:func.theme-color("danger");
+        @include mixins.responsive(xs){
+        }
+    }
+
+    .stick-menu{
+      display: none;
+      @include mixins.responsive(xs){
+        display: inherit;
+        cursor: pointer;
+        font-size: larger;
+        font-weight: 600;
+      }
     }
 
     &--menu{
       display: flex;
       list-style: none;
+
+      @include mixins.responsive(xs){
+        display: none;
+        position: fixed;
+        background-color: func.theme-color("danger");
+        height:100vh;
+        width:100vw;
+        top:-100%;
+        left:0;
+        transition: 5000ms;
+        &.show{
+          display: block;
+          top:6.5%;
+        }
+        & li{
+          padding: 1rem;
+          font-size: larger;
+        } 
+
+        & li > a {
+          &.active{
+            color:antiquewhite
+          }
+        }
+      }
 
       &__item > a{
         margin-right: 1.5rem;
@@ -28,6 +77,10 @@
         }
         &.active{
             color: func.theme-color("danger")
+        }
+
+        @include mixins.responsive(xs){
+          color:#fff;
         }
       }
     }

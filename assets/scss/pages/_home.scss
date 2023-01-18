@@ -1,8 +1,16 @@
+@use "../abstract/mixins" as mixins;
 .hero-area{
     display:flex;
     justify-content: space-around;
     padding: 5rem 15rem;
     align-items: center;
+    margin-top: 120px;
+
+    @include mixins.responsive(xs){
+        flex-direction: column;
+        padding: 1rem 2rem;
+        margin-top: 70px;
+    }
     &--contant{
         max-width: 34rem;
     }

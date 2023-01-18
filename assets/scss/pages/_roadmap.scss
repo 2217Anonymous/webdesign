@@ -1,7 +1,12 @@
 @use '../abstract/variables' as var;
 @use '../abstract/function' as func;
+@use "../abstract/mixins" as mixins;
 .roadmap{
     padding:4rem 10rem;
+
+    @include mixins.responsive(xs){
+        padding: 2rem 2rem;
+    }
 
     &--heading{
         text-align: center;
@@ -12,6 +17,10 @@
         justify-content: space-around;
         align-items: center;
         margin-top:2rem;
+
+        @include mixins.responsive(xs){
+            flex-direction: column;
+        }
     }
 
     &--item{
@@ -76,11 +85,17 @@
             color:#111;
             right:-15%;
             top:20%;
+            @include mixins.responsive(xs){
+                display:none
+            }
         }
         &:hover:not(:last-child)::before{
             content:"\f164";
             right: -17%;
-            color:func.theme-color("primary")
+            color:func.theme-color("primary");
+            @include mixins.responsive(xs){
+                display:none
+            }
         }
         &:last-child::before{
             position: absolute;
@@ -90,10 +105,16 @@
             right:-5%;
             top:20%;
             margin-right:-20px;
+            @include mixins.responsive(xs){
+                display:none
+            }
         }
         &:hover:last-child::before{
             content:"😍 👍";
-            color:func.theme-color("primary")
+            color:func.theme-color("primary");
+            @include mixins.responsive(xs){
+                display:none
+            }
         }
 
         &:hover{

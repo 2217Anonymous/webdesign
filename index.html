@@ -20,19 +20,24 @@
             <h2>Anonymous <span class="font-ta color-animation">{வெங்கடெஷ்வரன்}</span></h2>
         </div>
         <div>
+            <div class="stick-menu">
+                <i class="navIcon fa fa-bars"></i>
+                <i class="navIcon fa fa-times hidden"></i>
+            </div>
+            
             <ul class="header--menu">
-                <li class="header--menu__item"><a class="active" href="#">Home</a></li>
-                <li class="header--menu__item"><a href="#">About</a></li>
-                <li class="header--menu__item"><a href="#">Service</a></li>
-                <li class="header--menu__item"><a href="#">Roadmap</a></li>
-                <li><a class="btn-primary" href="#">Contacts</a></li>
+                <li class="header--menu__item"><a class="active" href="#home">Home</a></li>
+                <li class="header--menu__item"><a href="#about">About</a></li>
+                <li class="header--menu__item"><a href="#service">Service</a></li>
+                <li class="header--menu__item"><a href="#roadmap">Roadmap</a></li>
+                <li><a class="btn-primary" href="#contact">Contacts</a></li>
             </ul>
         </div>
     </header>
     <!-- ========== End Header ========== -->
     <!-- ========== Start Main ========== -->
     <main>
-        <section class="hero-area">
+        <section id="home" class="hero-area">
             <div class="background-shaps">
                 <div class="box1"></div>
                 <div class="box2"></div>
@@ -70,15 +75,15 @@
                 </div>
             </div>
             <div>
-                <img src="./assets/web-design-illustration.png" height="400" alt="">
+                <img class="responsive-img" src="./assets/web-design-illustration.png" height="400" alt="">
             </div>
         </section>
         
         <!-- ========== Start About ========== -->
         
-        <section class="about-area mt-5">
+        <section id="about" class="about-area mt-5">
             <div>
-                <img class="about-area--img" src="./assets/web-development-illustration.png" alt="" srcset="">
+                <img class="about-area--img responsive-img" src="./assets/web-development-illustration.png" alt="" srcset="">
             </div>
             <div class="about-area--content ml-2">
                 <h2>Learning never been this easy!</h2>
@@ -95,7 +100,7 @@
 
         <!-- ========== Start Roadmap ========== -->
 
-        <section class="roadmap">
+        <section id="roadmap" class="roadmap">
             <div class="roadmap--heading">
                 <h2>Roadmap Expertise</h2>
                 <p>
@@ -142,12 +147,12 @@
         <!-- ========== End Roadmap ========== -->
 
         <!-- ========== Start Services ========== -->
-        <section class="courses">
+        <section id="service" class="courses">
             <div class="courses--heading">
                 <h2>Free Course to Enroll</h2>
                 <p>Start from beginning, no pre-requesties required.</p>
             </div>
-            <div class="courses--cards mt-5">
+            <div class="courses--cards mt-5 space-y-1">
                 <div class="courses--card">
                     <a href="#">
                         <div>
@@ -197,7 +202,7 @@
         <!-- ========== End Services ========== -->
 
         <!-- ========== Start Contact ========== -->
-        <section class="contact">
+        <section id="contact" class="contact">
             <div class="contact--card">
                 <form class="contact--card__form space-y-1" method="POST" action="/">
                     <div class="contact--area__header">
@@ -221,7 +226,7 @@
                     </div>
                 </form>
                 <div class="contact--card__img">
-                    <img src="assets/cyberdude-contact.png" alt="">
+                    <img class="responsive-img" src="assets/cyberdude-contact.png" alt="">
                 </div>
             </div>
         </section>
@@ -247,5 +252,7 @@
         </div>
     </footer>
     <!-- ========== End Footer ========== -->
+
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>

@@ -5,6 +5,13 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@media only screen and (max-width: 576px) {
+  body {
+    border: 5px solid rgb(212, 67, 67);
+  }
 }
 
 a {
@@ -75,6 +82,15 @@ a {
   background: linear-gradient(to right, #e24997, #2d2ed2);
 }
 
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
 .btn, .btn-primary-outline, .btn-primary {
   padding: 0.8rem 1.6rem;
   border-radius: 6px;
@@ -105,16 +121,62 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
   padding: 1rem 10rem;
   font-weight: 600;
-  border: 1px solid rgb(184, 181, 181);
+  background-color: aliceblue;
+  width: 100%;
+  top: 0;
+  box-shadow: 5px 5px 5px 0px rgba(102, 100, 100, 0.75);
+  z-index: 1;
+}
+@media only screen and (max-width: 576px) {
+  .header {
+    padding: 1rem 1rem;
+    box-shadow: 2px #111;
+    font-size: 12px;
+  }
 }
 .header span {
   color: rgb(212, 67, 67);
 }
+.header .stick-menu {
+  display: none;
+}
+@media only screen and (max-width: 576px) {
+  .header .stick-menu {
+    display: inherit;
+    cursor: pointer;
+    font-size: larger;
+    font-weight: 600;
+  }
+}
 .header--menu {
   display: flex;
   list-style: none;
+}
+@media only screen and (max-width: 576px) {
+  .header--menu {
+    display: none;
+    position: fixed;
+    background-color: rgb(212, 67, 67);
+    height: 100vh;
+    width: 100vw;
+    top: -100%;
+    left: 0;
+    transition: 5000ms;
+  }
+  .header--menu.show {
+    display: block;
+    top: 6.5%;
+  }
+  .header--menu li {
+    padding: 1rem;
+    font-size: larger;
+  }
+  .header--menu li > a.active {
+    color: antiquewhite;
+  }
 }
 .header--menu__item > a {
   margin-right: 1.5rem;
@@ -127,6 +189,11 @@ a {
 }
 .header--menu__item > a.active {
   color: rgb(212, 67, 67);
+}
+@media only screen and (max-width: 576px) {
+  .header--menu__item > a {
+    color: #fff;
+  }
 }
 
 .background-shaps .box, .background-shaps .box2, .background-shaps .box3, .background-shaps .box1 {
@@ -152,6 +219,11 @@ a {
   top: 50%;
   left: 90%;
   border: 3px solid rgb(247, 61, 14);
+}
+@media only screen and (max-width: 576px) {
+  .background-shaps .box, .background-shaps .box2, .background-shaps .box3, .background-shaps .box1 {
+    display: none;
+  }
 }
 .background-shaps .dot, .background-shaps .dot4, .background-shaps .dot3, .background-shaps .dot2, .background-shaps .dot1 {
   position: absolute;
@@ -212,7 +284,12 @@ a {
 .background-shaps .heart5 {
   font-size: 1.5rem;
   top: 42%;
-  left: 35%;
+  left: 42%;
+}
+@media only screen and (max-width: 576px) {
+  .background-shaps {
+    display: none;
+  }
 }
 
 @keyframes box-rotate {
@@ -902,6 +979,14 @@ a:hover {
   justify-content: space-around;
   padding: 5rem 15rem;
   align-items: center;
+  margin-top: 120px;
+}
+@media only screen and (max-width: 576px) {
+  .hero-area {
+    flex-direction: column;
+    padding: 1rem 2rem;
+    margin-top: 70px;
+  }
 }
 .hero-area--contant {
   max-width: 34rem;
@@ -931,6 +1016,11 @@ a:hover {
   font-size: 3rem;
   color: #fff;
 }
+@media only screen and (max-width: 576px) {
+  .about-area--content h2 {
+    font-size: 2rem;
+  }
+}
 .about-area--content p {
   color: #cfcfcf;
   line-height: 2;
@@ -939,9 +1029,21 @@ a:hover {
   color: #fff;
   text-shadow: 10px 20px 30px #111;
 }
+@media only screen and (max-width: 576px) {
+  .about-area {
+    padding: 1rem 2rem;
+    flex-direction: column;
+    text-align: justify;
+  }
+}
 
 .roadmap {
   padding: 4rem 10rem;
+}
+@media only screen and (max-width: 576px) {
+  .roadmap {
+    padding: 2rem 2rem;
+  }
 }
 .roadmap--heading {
   text-align: center;
@@ -951,6 +1053,11 @@ a:hover {
   justify-content: space-around;
   align-items: center;
   margin-top: 2rem;
+}
+@media only screen and (max-width: 576px) {
+  .roadmap--items {
+    flex-direction: column;
+  }
 }
 .roadmap--item {
   position: relative;
@@ -1010,10 +1117,20 @@ a:hover {
   right: -15%;
   top: 20%;
 }
+@media only screen and (max-width: 576px) {
+  .roadmap--item:not(:last-child)::before {
+    display: none;
+  }
+}
 .roadmap--item:hover:not(:last-child)::before {
   content: "\f164";
   right: -17%;
   color: #3f43fd;
+}
+@media only screen and (max-width: 576px) {
+  .roadmap--item:hover:not(:last-child)::before {
+    display: none;
+  }
 }
 .roadmap--item:last-child::before {
   position: absolute;
@@ -1024,9 +1141,19 @@ a:hover {
   top: 20%;
   margin-right: -20px;
 }
+@media only screen and (max-width: 576px) {
+  .roadmap--item:last-child::before {
+    display: none;
+  }
+}
 .roadmap--item:hover:last-child::before {
   content: "😍 👍";
   color: #3f43fd;
+}
+@media only screen and (max-width: 576px) {
+  .roadmap--item:hover:last-child::before {
+    display: none;
+  }
 }
 .roadmap--item:hover {
   filter: grayscale(0);
@@ -1035,6 +1162,11 @@ a:hover {
 .courses {
   padding: 4rem 10rem;
   background-color: blue;
+}
+@media only screen and (max-width: 576px) {
+  .courses {
+    padding: 2.5rem 1rem;
+  }
 }
 .courses--heading {
   text-align: center;
@@ -1046,6 +1178,13 @@ a:hover {
 .courses--cards {
   display: flex;
   justify-content: space-between;
+}
+@media only screen and (max-width: 576px) {
+  .courses--cards {
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+  }
 }
 .courses--card {
   max-width: 300px;
@@ -1078,8 +1217,12 @@ a:hover {
   display: flex;
   justify-content: center;
 }
+@media only screen and (max-width: 576px) {
+  .courses--info {
+    flex-direction: column;
+  }
+}
 .courses--info a {
-  margin-left: 5px;
   color: #fff;
 }
 .courses--info a:hover {
@@ -1114,6 +1257,11 @@ a:hover {
   padding: 4rem 6rem;
   background-color: rgba(185, 183, 183, 0.829);
 }
+@media only screen and (max-width: 576px) {
+  .contact {
+    padding: 1rem 1rem;
+  }
+}
 .contact--card {
   background-color: white;
   display: flex;
@@ -1124,6 +1272,11 @@ a:hover {
 }
 .contact--card p {
   font-size: small;
+}
+@media only screen and (max-width: 576px) {
+  .contact--card {
+    flex-direction: column;
+  }
 }
 .contact--card__form {
   flex-grow: 1;

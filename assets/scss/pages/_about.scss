@@ -1,5 +1,6 @@
 @use '../abstract/variables' as var;
 @use '../abstract/function' as func;
+@use '../abstract/mixins' as mixins;
 
 .about-area{
     padding:4rem 8rem;
@@ -14,6 +15,9 @@
         h2{
             font-size: 3rem;
             color:#fff;
+            @include mixins.responsive(xs){
+                font-size: 2rem;
+            }
         }
         p{
             color:#cfcfcf;
@@ -23,5 +27,11 @@
                 text-shadow: 10px 20px 30px #111;
             }
         }
+    }
+
+    @include mixins.responsive(xs){
+        padding:1rem 2rem;
+        flex-direction: column;
+        text-align: justify;
     }
 }

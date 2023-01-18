@@ -1,4 +1,6 @@
 @use "../abstract/variables" as var;
+@use "../abstract/function" as func;
+@use '../abstract/mixins' as mixins;
 @import url('https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
  
 *{
@@ -6,8 +8,15 @@
     padding: 0;
     font-family: var.$font-primary;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
   
+body{
+    @include mixins.responsive(xs){
+        border:5px solid func.theme-color("danger");
+    }
+
+}
 a{
     text-decoration: none;
     color:#000

@@ -1,9 +1,14 @@
 @use '../abstract/variables' as var;
 @use '../abstract/function' as func;
+@use '../abstract/mixins' as mixins;
 
 .courses{
     padding: 4rem 10rem;
     background-color: blue;
+
+    @include mixins.responsive(xs){
+        padding:2.5rem 1rem;
+    }
 
     &--heading{
         text-align: center;
@@ -16,6 +21,13 @@
     &--cards{
         display: flex;
         justify-content: space-between;
+
+        @include mixins.responsive(xs){
+            flex-direction: column;
+            align-content: space-between;
+            align-items: center;
+            
+        }
     }
 
     &--card{
@@ -54,9 +66,11 @@
         font-size: small;
         display: flex;
         justify-content: center;
+        @include mixins.responsive(xs){
+            flex-direction: column;
+        }
 
         a{
-            margin-left: 5px;
             color:#fff;
         }
 
