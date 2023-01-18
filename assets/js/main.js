@@ -1,6 +1,7 @@
 const stick_menu = document.querySelector(".stick-menu")
+const navLinks = document.querySelectorAll(".header--menu > li > a")
 
-stick_menu.addEventListener("click",()=>{
+function menuState(){
     const header_menu = document.querySelector("ul.header--menu")
     const nav_icon = document.querySelectorAll(".navIcon")
     header_menu.classList.toggle("show")
@@ -8,9 +9,11 @@ stick_menu.addEventListener("click",()=>{
     nav_icon.forEach((icon) =>{
         icon.classList.toggle("hidden")
     })
-})
+}
 
-function navbarFixed(){
+stick_menu.addEventListener("click",menuState)
+
+const navbarFixed=(()=>{
     const headerDom = document.querySelector(".header")
     const navOfSetTop = headerDom.clientHeight + 50;
 
@@ -23,12 +26,10 @@ function navbarFixed(){
             headerDom.classList.remove("navbar-fixed")
         }
     })
-}
+})()
 
-function setMenuAcive(){
+const setMenuAcive=(()=>{
     const section = document.querySelectorAll("section")
-    const navLinks = document.querySelectorAll(".header--menu__item > a")
-
     window.addEventListener("scroll",() => {
         let current =""
         section.forEach(section => {
@@ -47,7 +48,13 @@ function setMenuAcive(){
             }
         })
     });
-}
+})()
 
-navbarFixed()
-setMenuAcive()
+const onMenuClick = (() => {
+    const navLinks = document.querySelectorAll(".header--menu > li > a")
+    for(i=0; i<=navLinks.length;i++){
+        navLinks[i].addEventListener("click",() =>{
+            menuState()
+        })
+    }
+})()
